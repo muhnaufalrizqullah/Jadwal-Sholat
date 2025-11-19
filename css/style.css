@@ -32,7 +32,7 @@ html {
 body {
     font-family: var(--font-body);
     /* Pastikan path gambar benar di file Anda */
-    background: url('/image/Fasilitas-BQ-Islamic-Boarding-School-Kota-Bogor-1-1-1024x683.jpg') no-repeat center center fixed;
+    background: url('https://binaqurani.sch.id/wp-content/uploads/2024/07/Fasilitas-BQ-Islamic-Boarding-School-Kota-Bogor-1-1-1024x683.jpg') no-repeat center center fixed;
     background-size: cover;
     color: var(--text-dark);
     display: flex;
