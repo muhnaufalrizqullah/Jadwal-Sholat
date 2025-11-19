@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Sholat - BQ Islamic Boarding School</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="image/image.png" type="image/image.png">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#home" class="logo">
+                <img src="image/image.png" alt="BQ Islamic Boarding School Logo" class="navbar-logo">
+            </a>
+
+            <!-- Tombol navigasi kanan atas -->
+           
+           
+           
+                <div class="center-text">BINA QUR'ANI MOSQUE</div>
+            
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </nav>
+            </header>
+
+            <!-- Tombol hamburger (mobile) -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container" id="home">
+           
+
+            <!-- Bagian Lokasi & Jam -->
+            <div class="top-info">
+                <div class="location-display">
+                    <h1 id="lokasi">Memuat lokasi...</h1>
+                    <p id="tanggal-hari-ini">Memuat tanggal...</p>
+                </div>
+                <div class="clock-display">
+                    <p id="live-clock">--:--:--</p>
+                </div>
+            </div>
+
+            <!-- Waktu sholat berikutnya -->
+            <div id="next-prayer-info" class="next-prayer-info">
+                <h2>Waktu Sholat Berikutnya</h2>
+                <p>
+                    <span id="next-prayer-name">---</span> dalam
+                    <span id="countdown-timer">--:--:--</span>
+                </p>
+            </div>
+
+            <!-- Jadwal sholat -->
+            <div class="jadwal-cards">
+                <div class="card" data-prayer="Subuh">
+                    <h2>Subuh</h2>
+                    <p id="subuh">--:--</p>
+                </div>
+                <div class="card" data-prayer="Dzuhur">
+                    <h2>Dzuhur</h2>
+                    <p id="dzuhur">--:--</p>
+                </div>
+                <div class="card" data-prayer="Ashar">
+                    <h2>Ashar</h2>
+                    <p id="ashar">--:--</p>
+                </div>
+                <div class="card" data-prayer="Maghrib">
+                    <h2>Maghrib</h2>
+                    <p id="maghrib">--:--</p>
+                </div>
+                <div class="card" data-prayer="Isya">
+                    <h2>Isya</h2>
+                    <p id="isya">--:--</p>
+                </div>
+            </div>
+
+            <!-- Fitur Pencarian Lokasi -->
+            <div class="location-feature">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Cari nama kota...">
+                    <button id="search-button">Cari</button>
+                </div>
+                <button id="detect-location-button">Gunakan Lokasi Saat Ini</button>
+            </div>
+            <div id="search-results" class="search-results"></div>
+
+            
+
+
+
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Nopal Ganteng. Data By Kemenag.</p>
+    </footer>
+
+    <script src="js/javascript.js"></script>
+</body>
+</html>

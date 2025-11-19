@@ -1,0 +1,509 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* ================================
+  VARIABEL WARNA DAN FONT
+=================================== */
+:root {
+    --primary-blue: #005A9C;
+    --accent-green: #84C62F;
+    --accent-orange: #F5A623;
+    --text-dark: #333333;
+    --text-light: #f8f9fa;
+    --bg-light: #f4f8fa;
+    --bg-white: #ffffff;
+    --border-color: #dee2e6;
+    --logo-gradient: linear-gradient(90deg, var(--accent-green), var(--primary-blue));
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* ================================
+  RESET & DASAR
+=================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    /* Pastikan path gambar benar di file Anda */
+    background: url('/image/Fasilitas-BQ-Islamic-Boarding-School-Kota-Bogor-1-1-1024x683.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 120vh;
+    scroll-behavior: smooth;
+}
+
+/* ================================
+  HEADER & NAVBAR (KOREKSI POSISI TEKS TENGAH)
+=================================== */
+header {
+    background-color: rgba(0, 90, 156, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 30px;
+    position: relative; /* PENTING: WADAH UTAMA RELATIVE */
+    height: 70px; /* Tinggi tetap untuk menampung konten */
+}
+
+.navbar-logo {
+    height: 130px;
+    z-index: 10;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0; 
+    z-index: 10;
+}
+
+/* TEKS TENGAH: BINA QUR'ANI MOSQUE */
+.center-text {
+    position: absolute;
+    /* Kombinasi 50% dan -50% untuk center sempurna */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--bg-white);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    pointer-events: none; /* Agar tidak menghalangi klik pada link di bawahnya */
+}
+
+/* NAVIGATION MENU (Pindah ke Kanan) */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.nav-links a {
+    padding: 8px 14px;
+    text-decoration: none;
+    font-family: var(--font-heading);
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ================================
+  LAYOUT UTAMA
+=================================== */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* ================================
+  FOOTER
+=================================== */
+footer {
+    background-color: rgba(44, 62, 80, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* ================================
+  BAGIAN INFORMASI ATAS (Lokasi & Jam Live)
+=================================== */
+.top-info {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--text-dark); 
+}
+
+.top-info #lokasi {
+    font-family: var(--font-heading);
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--primary-blue);
+}
+
+.top-info #tanggal-hari-ini {
+    font-size: 1em;
+    color: var(--text-dark);
+}
+
+/* JAM LIVE (SIMPLE BARU) */
+.clock-display {
+    display: flex;
+    align-items: center;
+}
+.clock-display #live-clock {
+    background-color: rgba(0, 90, 156, 0.8);
+    color: var(--bg-white);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.2em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    backdrop-filter: blur(4px);
+}
+
+/* ================================
+  INFO SHOLAT BERIKUTNYA
+=================================== */
+.next-prayer-info {
+    background-color: rgba(0, 90, 156, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-align: center;
+    color: var(--bg-white);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.next-prayer-info h2 {
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    font-weight: 400;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.next-prayer-info p {
+    font-family: var(--font-heading);
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+/* ================================
+  JADWAL SHOLAT CARD
+=================================== */
+.jadwal-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+}
+
+.card p {
+    font-family: var(--font-heading);
+    font-size: 1.7em;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.next-prayer-highlight {
+    background-color: rgba(0, 90, 156, 0.8);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--bg-white);
+    transform: translateY(-5px) scale(1.05);
+    border-color: rgba(0, 90, 156, 0.8);
+}
+
+.next-prayer-highlight h2 { color: rgba(255, 255, 255, 0.8); }
+.next-prayer-highlight p { color: var(--bg-white); }
+
+/* ================================
+  FITUR PENCARIAN
+=================================== */
+.location-feature {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-box { display: flex; gap: 5px; }
+#search-input {
+    font-family: var(--font-body);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+}
+#search-button, #detect-location-button {
+    font-family: var(--font-heading);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--bg-white);
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+/* WARNA NORMAL: Cari (Biru), Lokasi (Oranye) */
+#search-button {
+    background-color: var(--primary-blue);
+}
+#detect-location-button {
+    background-color: var(--accent-orange);
+}
+
+/* WARNA HOVER: Cari (Oranye), Lokasi (Biru) */
+#search-button:hover {
+    background-color: var(--accent-orange);
+}
+#detect-location-button:hover {
+    background-color: var(--primary-blue);
+}
+
+.search-results { margin-top: 15px; max-height: 150px; overflow-y: auto; }
+.result-item {
+    font-family: var(--font-body);
+    padding: 10px;
+    background-color: rgba(240, 240, 240, 0.8);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    color: var(--text-dark);
+}
+.result-item:hover { background-color: rgba(224, 224, 224, 1); }
+
+/* ================================
+  HAMBURGER MENU (MOBILE)
+=================================== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ================================
+  RESPONSIVE
+=================================== */
+@media (max-width: 900px) {
+    .center-text {
+        font-size: 1.4em;
+    }
+}
+@media (max-width: 768px) {
+    .top-info { flex-direction: column; text-align: center; gap: 15px; }
+    .jadwal-cards { grid-template-columns: repeat(2, 1fr); }
+
+    nav {
+        justify-content: space-between;
+        padding: 0 15px;
+        height: 80px; /* Sedikit lebih tinggi untuk mobile */
+    }
+    
+    .center-text {
+        display: none; /* Sembunyikan teks tengah di mobile */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px; 
+        right: 15px;
+        left: 15px;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(10px);
+        padding: 15px;
+        border-radius: 12px;
+        gap: 10px;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+@media (max-width: 480px) {
+    .jadwal-cards { grid-template-columns: 1fr; }
+    .location-feature { flex-direction: column; }
+    .search-box { width: 100%; }
+    #search-input { width: 100%; }
+}
+
+/* ================================
+  BAGIAN ABOUT US & ARTICLE
+=================================== */
+.about-section {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--text-dark);
+    max-width: 800px;
+    margin: 60px auto 40px auto;
+    padding: 40px 25px;
+    border-radius: 15px;
+    text-align: center; 
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.about-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.article-section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center; 
+}
+
+.article-section h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--bg-white); 
+    margin-bottom: 20px;
+}
+
+.article-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.article-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 30px;
+    border-radius: 15px;
+    color: var(--text-dark);
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    text-align: center; 
+}
+
+.article-card h3 { 
+    font-size: 20px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.article-card a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    color: var(--primary-blue);
+    border: 1px solid var(--primary-blue);
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.article-card a:hover {
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+}
